@@ -1,0 +1,26 @@
+export const appointments = [
+  {
+    name: "John Doe",
+    image: "https://i.pravatar.cc/150?img=1",
+    date: "02/25/2018",
+    time: "09:00",
+    email: "john@example.com",
+    mobile: "1234567890",
+    gender: "female",
+    status: "Upcoming",
+    address: "123 Elm Street",
+    disease: "Fever",
+  },
+  {
+    name: "Jane Smith",
+    image: "https://i.pravatar.cc/150?img=2",
+    date: "10/02/2024",
+    time: "09:00",
+    email: "jane@example.com",
+    mobile: "0987654321",
+    gender: "male",
+    status: "Completed",
+    address: "456 Oak Road",
+    disease: "Cold",
+  },
+];

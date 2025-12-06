@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { HiOutlineBars3 } from "react-icons/hi2";
 
 
-export default function AdminLayout({ children, params }) {
+export default function EmployeeLayout({ children, params }) {
   // const { id } = params; // Get dynamic ID
 const { id } = "123";
 const pathname = usePathname();

@@ -57,17 +57,48 @@ import { IoMdEyeOff ,IoIosEye } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import InputField from "@/components/InputField";
 import { useRouter } from "next/navigation";
+import { loginUser } from "@/lib/auth";
 
 export default function LoginForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
 const router = useRouter();
-  const onSubmit = (data) => {
+  const onSubmit =async (data) => {
     console.log("Login Data:", data);
     // router.push(`/${orgId}/admin`);
-    router.push(`/admin`);
+    // router.push(`/admin`);
+    router.push(`/abc/admin`);
+//  router.push(`/abc/employee`);
+      // e.preventDefault();
+    try {
+      const res = await loginUser({ email, password });
+      console.log("LOGIN SUCCESS:", res);
+      // router.push("/dashboard"); // your path
+      router.push(`/abc/admin`);
+    } catch (err) {
+      // console.log("Login Error:", err);
+    }
+  
   };
+
+
+
+//   import api from "./axios";
+// import { saveToken, removeToken } from "@/lib/storage";
+
+// export const loginUser = async (data) => {
+//   const res = await api.post("/auth/login", data);
+//   if (res?.data?.token) {
+//     saveToken(res.data.token);
+//   }
+//   return res.data;
+// };
+
+// export const logoutUser = () => {
+//   removeToken();
+// };
+
 
   return (
     <div className="w-full max-w-sm mx-auto bg-white shadow-md rounded-xl p-8">
